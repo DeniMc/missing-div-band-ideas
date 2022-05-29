@@ -1,0 +1,343 @@
+* { margin: 0;
+    padding: 0;
+box-sizing: border-box;}
+
+body { background-color: black;
+margin: 2rem;
+color: white;}
+
+/* ********nav bar *********************/
+
+
+/*mobile first*/
+header { 
+    display: block;
+}
+
+header nav { 
+    display:none
+}
+
+header nav a {
+    color: white;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+header nav li {
+    display: block;
+    background-color: purple;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+header nav li:hover {
+    background-color: rgb(189, 5, 5);
+}
+
+/* hide and show nav bar in mobile dev */
+header input[type=checkbox]
+{  display:none }
+
+header span.icon{
+    display: block;
+    padding: 0.7rem;
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 900;
+}
+
+header span.icon::before {
+    content: '\f0c9';
+    font-size: 4rem;
+    color: purple;
+    
+}
+
+#check-btn:checked ~ nav{
+    display:block;
+}
+
+#check-btn:checked ~ label span::after {
+    content: '\f00d';
+    font-size: 2rem;
+    
+}
+
+#check-btn:checked ~ label span::before {
+    display: none;
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+
+    header nav { 
+        display: block;
+
+        margin-left: 10%;
+       
+    }
+        header nav li{
+            display: inline-block;
+           
+        }
+        #check-btn, header label{
+            display: none;
+        }
+    }
+
+
+/*  ****************************************************** */
+.band-logo {
+    float: right;
+}
+
+.band-logo img { 
+    background-color: purple;
+    width: 200px;
+   padding-bottom: 4rem;
+}
+
+.banner { 
+    font-family: "New Rocker", cursive;
+    font-size: 15em;
+    margin: 1.5rem;
+    display: flex;
+    justify-content: center;
+    color:#484848;
+}
+
+
+    
+
+/* ****disappearing word Div ****** */
+
+#disappear {
+    color: #FFFFFF;
+text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+    font-family: "New Rocker", cursive;
+
+    font-size: 15rem;
+    margin-top: 0.5em;
+    animation: gone 20s infinite ease-in-out;
+    }
+
+    @keyframes gone{
+        0% { opacity: 0;}
+        10% { opacity: 0;}
+        20% { opacity: 0;}
+        30% { opacity: 0;}
+        40% { opacity: 0;}
+        50% { opacity: 1;}
+        60% { opacity: 0;}
+        70% { opacity: 0;}
+        80% { opacity: 1;}
+        90% { opacity: 1;}
+        100% { opacity: 0;}
+    }
+
+    
+    @media only screen and (max-width: 2000px) {
+
+
+        .banner { 
+            font-size: 10rem;
+            }
+            #disappear {
+                font-size: 10rem;
+            }
+         }
+    
+         @media only screen and (max-width: 1600px) {
+    
+    
+            .banner { 
+                font-size: 8rem;
+                }
+                #disappear{
+                    font-size: 8rem;
+                }
+             }
+    
+             @media only screen and (max-width: 1400px) {
+    
+    
+                .banner { 
+                    font-size: 7rem;
+                    }
+                    #disappear {
+                        font-size: 7rem;
+                    }
+                 }
+    
+                 @media only screen and (max-width: 1300px) {
+    
+    
+                    .banner { 
+                        font-size: 5rem;
+                        }
+                        #disappear{
+                            font-size: 5rem;
+                        }
+                     }
+
+                     @media only screen and (max-width: 850px) {
+    
+    
+                        .banner { 
+                            font-size: 3.5rem;
+                            }
+                            #disappear{
+                                font-size: 3.5rem;
+                            }
+                            .band-logo { display: none;
+                            }
+                            .band-story { background-color: purple;
+                            background-image: url(images/logo.png);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: top;
+                        }
+                          }
+
+                          @media only screen and (max-width:650px) {
+                              .banner {
+                                  font-size: 3rem;
+                              }
+                              #disappear {
+                                  font-size: 3rem;
+                              }
+                              h3 {font-size: 1.4rem;}
+
+                              .bio-box { display: flex;
+                            flex-direction: column;}
+                          }
+
+
+
+.banner span{
+    /*animation : lighting 1s alternate infinite ease;*/
+    animation-name: lightning;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes lightning{
+    0%,70%{
+        color: #484848;
+        text-shadow: none;
+    }
+    100%{
+        color: rgb(134, 33, 134);
+        text-shadow: 3px 0px 10px rgb(207, 90, 207) , 3px 0 10px #fff900;
+    }
+    /*lightning colour added to individual spans 200ms apart */
+}
+
+.banner span:nth-child(1){
+    animation-delay: 250ms;
+}
+.banner span:nth-child(2){
+    animation-delay: 500ms;
+}
+.banner span:nth-child(3){
+    animation-delay: 750ms;
+}
+.banner span:nth-child(4){
+    animation-delay: 1000ms;
+}
+.banner span:nth-child(5){
+    animation-delay: 1250ms;
+}
+.banner span:nth-child(6){
+    animation-delay: 1500ms;
+}
+.banner span:nth-child(7){
+    animation-delay: 1750ms;
+}
+.banner span:nth-child(9){
+    animation-delay: 1800ms;
+}
+
+/* *** lighting for title ended *** */
+
+
+
+
+article { color: white;
+font-size: 1.5em;
+text-align: center;}
+
+.bio-box {
+    display: flex;
+}
+
+.bio-box p {
+    margin: 2rem;
+}
+
+.container { display: flex;
+justify-content: space-around;
+flex-wrap: wrap;}
+
+h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem;
+}
+
+h4 { font-size: 2rem;}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 500px;
+    height: 800px;
+    border: 1px solid black;
+    border-radius: 1rem;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 1rem;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+    border-radius: 1rem;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    padding: 1rem;
+    background: linear-gradient(to left top, rgb(100, 10, 100), rgb(128, 31, 31));
+    border: 3px solid white;
+    color: white;
+    transform: rotateY(180deg);
+    bottom: 1rem;
+  }
